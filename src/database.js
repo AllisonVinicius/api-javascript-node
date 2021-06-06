@@ -1,7 +1,10 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('imoveis', 'mysql','', {
+
+const sequelize = new Sequelize('imovel', 'root', "", {
+    dialect: 'mysql',
     host: 'localhost',
-    dialec: 'mysql'
+    port: '3308'
+    
 });
 
 module.exports = sequelize;
