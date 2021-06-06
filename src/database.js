@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('imoveis', 'mysql','1234', {
+const sequelize = new Sequelize('imoveis', 'mysql','', {
     host: 'localhost',
     dialec: 'mysql'
 });
