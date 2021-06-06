@@ -1,10 +1,10 @@
 import express from 'express';
-import router from './routes';
+const api = express();
 
 
-const app = express();
+const routes = require('./routes');
 
-app.use(express.json());
-app.use(router);
-app.listen(3000, () => console.log('servidor ok ...'));
+api.use(express.json());
+api.use(routes);
+api.listen(3000, () => console.log('servidor ok ...'));
 

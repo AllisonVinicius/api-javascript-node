@@ -18,7 +18,7 @@ module.exports = {
             const user = await User.create({nome, cpf,email,password });
             return res.json(user);
         }catch (error){
-            return console.log("erro na criacao imovel",err);
+            return console.log("erro na criacao user",err);
         }
     }
 }
