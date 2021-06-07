@@ -8,9 +8,9 @@ const schema = 'user';
 class User extends Sequelize.Model {}
 User.init({
     nome: Sequelize.STRING,
-    cpf: Sequelize.INTEGER,
+    cpf: Sequelize.STRING,
     email: Sequelize.STRING,
-    password: Sequelize.STRING   
+    senha: Sequelize.STRING   
   
 
 }, {sequelize, modelName: 'user', schema});
