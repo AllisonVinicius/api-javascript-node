@@ -14,6 +14,8 @@ Imovel.init({
     qtd_Quartos: Sequelize.INTEGER,
     estado: Sequelize.BOOLEAN
 
+
+ 
 }, {sequelize, modelName: 'imovel', schema});
 
 

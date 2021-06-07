@@ -1,17 +1,17 @@
 import express = require('express');
 
 const ImovelController = require('./controller/ImovelController');
-const UserController = require('./controller/UserController');
+
 
 const routes = express.Router();
 
-routes.get('/imovel', ImovelController.list);
-routes.get('/imovel/:id', ImovelController.show);
-routes.post('/imovel', ImovelController.create);
-routes.put('/imovel/:id', ImovelController.update);
-routes.delete('/imovel/:id', ImovelController.delete);
 
-routes.post('/user', UserController.create);
+//rotas do imove
+routes.post('/imo', ImovelController.create);
+routes.get('/imo', ImovelController.list);
+routes.gut('/imo:id', ImovelController.update);
+
+
 
 
 
