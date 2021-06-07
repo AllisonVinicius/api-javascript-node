@@ -11,15 +11,13 @@ User.init({
     cpf: Sequelize.STRING,
     email: Sequelize.STRING,
     senha: Sequelize.STRING,
-    
 
     },{
-    
-   
+     
         hooks: {
             beforeCreate: (user) => {
               
-              user.senha = bcrypt.hashSync(user.senha, 8);
+              user.senha = bcrypt.hashSync(user.senha, bcrypt.genSaltSync(8));
             }
           },
           instanceMethods: {
