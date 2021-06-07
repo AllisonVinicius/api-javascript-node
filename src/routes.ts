@@ -2,6 +2,7 @@ import express = require('express');
 
 const ImovelController = require('./controller/ImovelController');
 const UserController = require('./controller/UserController');
+const LoginController = require('./controller/LoginController');
 
 const routes = express.Router();
 
@@ -21,6 +22,14 @@ routes.put('/users:id', UserController.update);
 routes.delete('/users/:id', UserController.delete);
 
 
+
+//rotas login
+
+routes.get('/login', LoginController.list);
+routes.get('/login/:id', LoginController.show);
+routes.post('/login', LoginController.create);
+routes.put('/login:id', LoginController.update);
+routes.delete('/login/:id', LoginController.delete);
 
 
 
