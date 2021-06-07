@@ -34,22 +34,20 @@ module.exports = {
     },
 
 
-    async update(req, res){
-        const sequelize = require('sequelize');
-        const up = sequelize.up;
-        const {nome, cpf,email,senha } = req.body;
-        const id = req.body;
-        
-        try{
-            await User.update({nome, cpf,email,senha }, {where:{ id: {[up.eq]: id}}});
-            return res.json({msg: `Usuario  ${nome} atualizado com sucesso..`});
-            
-        } catch (error) {
-            return res.json({msg: `Usuario ${nome} não atualizado`}, err);            
+    async update(req, res) {
+        try {
+          const user = await User.findByPk(req.params.id);
+    
+          await user.update(req.body);
+    
+          return res.json({ user });
+        } catch (err) {
+          return res.status(400).json({ error: err.message });
         }
+      },
 
 
-    },
+    
 
 
     async delete( req, res){
