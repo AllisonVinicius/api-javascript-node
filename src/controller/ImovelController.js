@@ -31,20 +31,17 @@ module.exports = {
     },
 
 
-    async update(req, res){
-        const sequelize = require('sequelize');
-        const up = sequelize.up;
-        const {cep, numero, complemento, valorAluguel, qtd_Quartos} = req.body;
-        const id = req.body;
-        
-        try{
-            await Imovel.update({cep, numero, complemento, valorAluguel, qtd_Quartos}, {where:{ id: {[up.eq]: id}}});
-            return res.json({msg: `Imovel N° ${numero} atualizado com sucesso..`});
-            
-        } catch (error) {
-            return res.json({msg: `Imovel N° ${nunero} não atualizado`}, err);            
+    async update(req, res) {
+        try {
+          const imovel = await Imovel.findByPk(req.params.id);
+    
+          await imovel.update(req.body);
+    
+          return res.json({ imovel });
+        } catch (err) {
+          return res.status(400).json({ error: err.message });
         }
-
+      
 
     },
 
