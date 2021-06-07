@@ -1,6 +1,7 @@
 const Imovel = require('../model/imovel');
 
 module.exports = {
+   
     async list(req, res){
         try{
             const imovel = await Imovel.findAll();

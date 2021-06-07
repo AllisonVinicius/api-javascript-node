@@ -2,23 +2,25 @@
 const User = require('../model/user');
 
 module.exports = {
+  
     async list(req, res){
         try{
             const user = await User.findAll();
             return res.json(user);
         } catch (err){
             return console.log("erro ao listar imovel");
-        }   
+        }
+    },
 
-},
+
 
     async create(req, res){
-        const {nome, cpf,email,password }  = req.body;
+        const {nome,cpf,email,senha }  = req.body;
         try{
-            const user = await User.create({nome, cpf,email,password });
+            const user = await User.create({nome,cpf,email,senha });
             return res.json(user);
-        }catch (error){
-            return console.log("erro na criacao user",err);
+        }catch (err){
+            return console.log("erro na criacao usuario",err);
         }
     },
 
@@ -35,11 +37,11 @@ module.exports = {
     async update(req, res){
         const sequelize = require('sequelize');
         const up = sequelize.up;
-        const {nome, cpf,email,password } = req.body;
+        const {nome, cpf,email,senha } = req.body;
         const id = req.body;
         
         try{
-            await User.update({nome, cpf,email,password }, {where:{ id: {[up.eq]: id}}});
+            await User.update({nome, cpf,email,senha }, {where:{ id: {[up.eq]: id}}});
             return res.json({msg: `Usuario  ${nome} atualizado com sucesso..`});
             
         } catch (error) {
