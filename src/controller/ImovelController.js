@@ -1,4 +1,3 @@
-
 const Imovel = require('../model/imovel');
 
 module.exports = {
@@ -10,16 +9,8 @@ module.exports = {
             return console.log("erro ao listar imovel");
         }   
 
-},
-
-    async show(req, res){
-        try{
-            const imovel = await Imovel.findAll({where: {id: req.params.id}});
-            return res.json(imovel);
-        } catch (err){
-            return console.logo("erro na pesquisa imovel", err);
-        }
     },
+    
     async create(req, res){
         const {cep, numero, complemento, valorAluguel, qtd_Quartos }  = req.body;
         try{
@@ -27,6 +18,14 @@ module.exports = {
             return res.json(imovel);
         }catch (error){
             return console.log("erro na criacao imovel",err);
+        }
+    },
+    async show(req, res){
+        try{
+            const imovel = await Imovel.findAll({where: {id: req.params.id}});
+            return res.json(imovel);
+        } catch (err){
+            return console.logo("erro na pesquisa imovel", err);
         }
     },
 
@@ -39,10 +38,10 @@ module.exports = {
         
         try{
             await Imovel.update({cep, numero, complemento, valorAluguel, qtd_Quartos}, {where:{ id: {[up.eq]: id}}});
-            return res.json({msg: `Imovel ${numero} atualizado com sucesso..`});
+            return res.json({msg: `Imovel N° ${numero} atualizado com sucesso..`});
             
         } catch (error) {
-            return res.json({msg: `Imovel${nunero} não atualizado`}, err);            
+            return res.json({msg: `Imovel N° ${nunero} não atualizado`}, err);            
         }
 
 
@@ -59,4 +58,4 @@ module.exports = {
         }
     }
 }
-    
+   
