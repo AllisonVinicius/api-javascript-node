@@ -1,0 +1,101 @@
+
+Criar Usuario:
+
+metodo -> post
+http://localhost:3000/users
+
+exemplo de entradas:
+
+{
+	"nome":"Allison",
+	"cpf": "74185229",
+	"email": "allison@teste.com.br",
+	"senha": "123456" 
+	
+}
+{
+	"nome:"Vinicius",
+	"cpf": "999999",
+	"email": "vinicius@teste.com.br",
+	"senha": "54321" 
+	
+}
+
+Obs: Após criar os método post, ele gera a senha criptografa, e  o token do usuário criado.
+
+
+
+Metodo get 
+mostra usuário criado.
+
+http://localhost:3000/users
+
+
+Metodo Put
+update campo usuario que deseja alterar;
+
+http://localhost:3000/users/2
+
+{
+    "nome": "vini"
+}
+
+
+Metodo Delete
+
+http://localhost:3000/users/1
+
+
+### ENTRADAS IMOVEL ###
+
+criar Imovel:
+ - Metodo post
+http://localhost:3000/imovel
+
+Exemplo Entrada.
+
+{
+	"cep": "7985241",
+    "numero": "10",
+	"complemento": "oriental",
+	"valorAluguel": "150",
+    "qtd_Quartos": "1",
+	"estado": "true"
+}
+
+{
+	"cep": "7985274",
+    "numero": "5",
+	"complemento": "quinze de novembro",
+	"valorAluguel": "850",
+    "qtd_Quartos": "2",
+	"estado": "false"
+}
+
+
+Metodo get 
+
+mostra usuário Imoveis cadastrados.
+
+http://localhost:3000/imovel
+
+
+Metodo Put
+update campo do imovel que deseja alterar;
+
+http://localhost:3000/imovel/2
+
+{
+    "numero": "10",
+    "valorAluguel": "750
+    
+}
+
+
+Metodo Delete
+
+http://localhost:3000/imovel/1
+
+
+
+
