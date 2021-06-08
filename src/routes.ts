@@ -1,8 +1,8 @@
 import express = require('express');
 
-const ImovelController = require('./controller/ImovelController');
-const UserController = require('./controller/UserController');
-const LoginController = require('./controller/LoginController');
+const ImovelController = require('./app/controller/ImovelController');
+const UserController = require('./app/controller/UserController');
+const LoginController = require('./app/controller/LoginController');
 
 const routes = express.Router();
 
@@ -11,7 +11,7 @@ const routes = express.Router();
 routes.get('/imovel', ImovelController.list);
 routes.get('/imovel/:id', ImovelController.show);
 routes.post('/imovel', ImovelController.create);
-routes.put('/imovel/id', ImovelController.update);
+routes.put('/imovel/:id', ImovelController.update);
 routes.delete('/imovel/:id', ImovelController.delete);
 
 //rotas users
