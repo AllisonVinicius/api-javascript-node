@@ -10,4 +10,4 @@ Para teste da api, o arquivo Teste.txt contem o Json com as rotas e insercao do 
 
 
 - Para rodar o Projeto digitar: yarn dev 
-- Projeto foi desenvolvido utilizando o S.O Linux Mint 19 e o VsCode.
+- Projeto foi desenvolvido utilizando o S.O Linux Mint 19 e o VsCode e o Insomnia para testar a Api e rotas.
