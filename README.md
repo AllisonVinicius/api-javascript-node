@@ -6,7 +6,7 @@ Api desenvolvida como atividade avaliativa para a Loomer Tech, para a vaga de Ba
 - Nesta api, contamos com os métodos de (Insert,Update,Select,Delete).
 as senhas foram criptografadas utilizando a biblioteca do JavaScript, BcryptJs, e Os dados quando salvos é gerado um token de validação, utilizando a biblioteca. JWT - Json Web Token. Para manipular o Banco de dados foi utilizado o ORM-> Sequelize.
 
-Para teste da api, o arquivo Teste.txt contem o Json com as rotas e insercao do Json da api para teste.
+Para teste da api, o arquivo entradas.txt contem o Json com as rotas e insercao do Json da api para teste.
 
 
 - Para rodar o Projeto digitar: yarn dev 
