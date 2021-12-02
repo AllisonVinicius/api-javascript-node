@@ -1,4 +1,4 @@
-#Teste para concorrer a vaga de dev
+# Teste para concorrer a vaga de dev
 # API 
 - Desenvolvida usando tecnologias: Nodejs, Express, Sequelize, JavaScript + Mysql.
 
